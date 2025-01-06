@@ -1,1 +1,6 @@
+@use 'colors' as c;
+
 $header-padding: 15%;
+$header-height: 100px;
+$box-shadow: 3px 3px 10px rgba(c.$black, .3);
+$home-gap: 40px;

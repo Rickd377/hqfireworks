@@ -1,17 +1,19 @@
 header {
   @include flex;
-  height: 100px;
+  height: v.$header-height;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
 
   nav {
     @include flex(space-between);
     padding-inline: v.$header-padding / 2;
-    background-color: rgba(c.$black, .85);
-    backdrop-filter: blur(10px);
+    background-color: c.$black;
     width: 100%;
     margin-inline: v.$header-padding;
     height: 75%;
     border-radius: 99rem;
-    box-shadow: 5px 3px 10px rgba(c.$black, .2);
+    box-shadow: v.$box-shadow;
     
     * {
       color: c.$white;

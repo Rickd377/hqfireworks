@@ -1,0 +1,116 @@
+#home {
+  .top-items {
+    @include flex(space-between, stretch);
+    gap: v.$home-gap;
+
+    .open-times {
+      background-color: c.$white;
+      @include flex(space-between, start, column);
+      width: fit-content;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: v.$box-shadow;
+      flex: 1;
+
+      .date-title {
+        text-align: center;
+        margin-bottom: .5rem;
+      }
+
+      .day {
+        @include flex(space-between);
+        width: 100%;
+        font-size: .95rem;
+        line-height: 1.3;
+        padding-inline: .3rem;
+
+        &.current-day {
+          background-color: c.$light-gray;
+        }
+
+        .time {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .top-item-ad {
+      flex: 1;
+      position: relative;
+
+      img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        filter: drop-shadow(v.$box-shadow);
+      }
+
+      .cover {
+        background-color: rgba(c.$black, .7);
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        bottom: 0;
+        @include flex(center, start);
+        padding-top: 5px;
+
+        a {
+          color: c.$white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .wish-list {
+      flex: 1;
+      @extend .open-times;
+      @include flex(start, start, column);
+
+      span {
+        font-size: .9rem;
+        margin-top: 5px;
+      }
+
+      a {
+        margin-top: auto;
+        color: c.$black;
+      }
+    }
+  }
+
+  .second-ad-item {
+    background-color: white;
+    margin-top: v.$home-gap;
+    border-radius: 1rem;
+    @include flex(start, center, column);
+    padding-block: 1rem;
+    box-shadow: v.$box-shadow;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-block: 1rem;
+      width: 100%;
+      text-align: center;
+      
+      a {
+        color: c.$black;
+      }
+    }
+  }
+
+  .third-ad-item {
+    @extend .second-ad-item;
+  }
+
+  .information-text {
+    @extend .second-ad-item;
+    strong {
+      font-weight: 600;
+    }
+  }
+}

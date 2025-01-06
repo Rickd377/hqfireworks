@@ -24,6 +24,13 @@ footer, header, nav, section, main {
 body {
   line-height: 1;
   font-family: "Poppins", sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  background-color: #222277;
+  background-attachment: fixed;
 }
 
 ol, ul {
@@ -55,12 +62,64 @@ input {
   color: #0066ff;
 }
 
+#producten, #nieuwsbrief, #informatie, #faq, #veiligheid, #contact, #route {
+  display: none;
+}
+
+#home, #producten, #nieuwsbrief, #informatie, #faq, #veiligheid, #contact, #route {
+  width: 100%;
+  padding-inline: 15%;
+  flex: 1;
+  padding-top: calc(100px + 1.5%);
+}
+
+main {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.firework {
+  position: absolute;
+  height: 2px;
+  width: var(--length);
+  border-radius: 2px;
+  transform: rotate(var(--angle));
+  animation: explode 1s ease-out forwards;
+  box-shadow: 0 0 10px var(--color), 0 0 20px var(--color), 0 0 30px var(--color);
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) rotate(var(--angle)) scale(1);
+    opacity: 1;
+    width: var(--length);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(var(--angle)) scale(1);
+    opacity: 0;
+    width: 2px;
+  }
+}
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   height: 100px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
 }
 header nav {
   display: flex;
@@ -68,14 +127,12 @@ header nav {
   align-items: center;
   flex-direction: row;
   padding-inline: 7.5%;
-  background-color: rgba(0, 0, 0, 0.85);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background-color: black;
   width: 100%;
   margin-inline: 15%;
   height: 75%;
   border-radius: 99rem;
-  box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 header nav * {
   color: white;
@@ -127,4 +184,126 @@ header nav .socials {
   flex-direction: row;
   gap: 1rem;
   font-size: 1.4rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: black;
+  color: white;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 40px;
+}
+
+#home .top-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 40px;
+}
+#home .top-items .open-times, #home .top-items .wish-list {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  flex: 1;
+}
+#home .top-items .open-times .date-title, #home .top-items .wish-list .date-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#home .top-items .open-times .day, #home .top-items .wish-list .day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  padding-inline: 0.3rem;
+}
+#home .top-items .open-times .day.current-day, #home .top-items .wish-list .day.current-day {
+  background-color: #ddd;
+}
+#home .top-items .open-times .day .time, #home .top-items .wish-list .day .time {
+  margin-left: 5px;
+}
+#home .top-items .top-item-ad {
+  flex: 1;
+  position: relative;
+}
+#home .top-items .top-item-ad img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.3));
+}
+#home .top-items .top-item-ad .cover {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: row;
+  padding-top: 5px;
+}
+#home .top-items .top-item-ad .cover a {
+  color: white;
+  text-decoration: none;
+}
+#home .top-items .wish-list {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+#home .top-items .wish-list span {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+#home .top-items .wish-list a {
+  margin-top: auto;
+  color: black;
+}
+#home .second-ad-item, #home .information-text, #home .third-ad-item {
+  background-color: white;
+  margin-top: 40px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 1rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+#home .second-ad-item h1, #home .information-text h1, #home .third-ad-item h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+#home .second-ad-item h2, #home .information-text h2, #home .third-ad-item h2 {
+  font-size: 1.1rem;
+  margin-block: 1rem;
+  width: 100%;
+  text-align: center;
+}
+#home .second-ad-item h2 a, #home .information-text h2 a, #home .third-ad-item h2 a {
+  color: black;
+}
+#home .information-text strong {
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */

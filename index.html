@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,28 +26,119 @@
         <li><a href="index.html"><img src="./assets/hqf.png" alt="logo" class="logo-img"></a></li>
       </ul>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Producten</a></li>
-        <li><a href="#">Nieuwsbrief</a></li>
-        <li><a href="#">Informatie</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Veiligheid</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Route</a></li>
+        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="producten">Producten</a></li>
+        <li><a href="#" data-target="nieuwsbrief">Nieuwsbrief</a></li>
+        <li><a href="#" data-target="informatie">Informatie</a></li>
+        <li><a href="#" data-target="faq">FAQ</a></li>
+        <li><a href="#" data-target="veiligheid">Veiligheid</a></li>
+        <li><a href="#" data-target="contact">Contact</a></li>
+        <li><a href="#" data-target="route">Route</a></li>
       </ul>
       <ul class="socials">
-        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook" title="facebook"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram" title="instagram"></i></a></li>
+        <li><a href="mailto:hqfireworks@gmail.com"><i class="fa-solid fa-envelope" title="send email"></i></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    
+    <div id="fireworks-container"></div>
+
+    <div id="home">
+      <div class="top-items">
+        <div class="open-times">
+          <p class="date-title">januari - maart 2025:</p>
+          <p class="day current-day">Maandag: <span class="time">gesloten</span></p>
+          <p class="day">Dinsdag: <span class="time">gesloten</span></p>
+          <p class="day">Woensdag: <span class="time">gesloten</span></p>
+          <p class="day">Donderdag: <span class="time">gesloten</span></p>
+          <p class="day">Vrijdag: <span class="time">gesloten</span></p>
+          <p class="day">Zaterdag: <span class="time">gesloten</span></p>
+          <p class="day">Zondag: <span class="time">gesloten</span></p>
+        </div>
+        <div class="top-item-ad">
+          <img src="./assets/populair-product.webp" alt="image">
+          <div class="cover">
+            <a href="#">Populair Product</a>
+          </div>
+        </div>
+        <div class="top-item-ad">
+          <img src="./assets/back-in-stock.webp" alt="image">
+          <div class="cover">
+            <a href="#">Terug Op Voorraad</a>
+          </div>
+        </div>
+        <div class="wish-list">
+          <p class="wish-list-title">Verlanglijst:</p>
+          <span>Er staan nog geen producten in je verlanglijst.</span>
+          <a href="#">Lijst Aanpassen/Bekijken</a>
+        </div>
+      </div>
+      <div class="second-ad-item">
+        <h1 class="company-name">HQFireworks - Vuurwerk België</h1>
+        <h1 class="sale-title">Promo Eindejaar 2024</h1>
+        <div class="ad-container">
+          <h2>Sier en ook veel losse knal in de aanbieding. Voor alle acties: kijk in de rubriek <a href="#">promo</a>.</h2>
+          <img src="./assets/sale.webp" alt="sale image">
+        </div>
+      </div>
+      <div class="third-ad-item">
+        <h1>Alleen is maar alleen</h1>
+        <div class="ad-container">
+          <h2>Met hoe meer je komt, des te meer kan je meenemen.</h2>
+          <img src="./assets/people.webp" alt="sale image">
+        </div>
+      </div>
+      <div class="information-text">
+        <h1>Vuurwerk in Hoogstraten</h1>
+        <h2>HOOGSTRATEN QUALITY FIREWORKS</h2>
+        <pre>HQFireworks is de grootste Belgische vuurwerkwinkel in de grensstreek met Nederland provincie Noord-Brabant. 
+
+U vindt onze vuurwerkwinkel op de Industrieweg 6; 2320 Hoogstraten; België net over de grend bij afrit Loenhout van de snelweg E19
+Breda-Antwerpen. Op slechts 20 minuten rijden van Breda en 30 minuten van Antwerpen!
+
+U kan bij ons terecht voor het beste knalvuurwerk en siervuurwerk van België. Belgisch vuurwerk staat bekend om hardere knallen,
+grotere effecten en een betere prijs/kwaliteitsverhouding. 
+
+Wij verkopen enkel de beste vuurwerk producten van de sterkste merken waaronder: Horsebrand, Salon Roger, Jorge, Piromax, Rubro,
+Oldskool-Newskool, 18+ Adult collection, Weco, Evolution, Gaoo, Surex, Tristar, Wolff, Privatex, Original, Zink, Wano, Borgonovo, Vulkan,
+Bugano, Orion. 
+
+Een greep uit het assortiment:
+    - De zwaarste en hardste chinese rollen, hindoerollen, nitraatmatten, ... 
+    - De hardste knallers van België, de beste nitraten en vlinders.
+    - De zwaarste en professionele vuurwerk cakes met de nieuwste effecten.
+    - De meest brute vuurwerk flowerbeds met de grootste uitwerkingen. 
+    - De krachtigste flowerbeds van België. 
+
+en dit altijd MET MEGA VEEL VOORDEEL met al uw <strong>vuurwerk</strong>!
+        </pre>
+      </div>
+    </div>
+
+    <div id="producten">producten</div>
+
+    <div id="nieuwsbrief"></div>
+
+    <div id="informatie">nieuwsbrief</div>
+
+    <div id="faq">faq</div>
+
+    <div id="veiligheid">veiligheid</div>
+
+    <div id="contact">contact</div>
+
+    <div id="route">route</div>
   </main>
 
   <footer>
-
+    <p>Privacy Verklaring</p>
+    <p>Sitemap Gebruikers</p>
+    <p>RSS</p>
+    <p>Copyright ©: HQFireworks Hoogstraten België</p>
+    <p>HQFireworks: Industrieweg 6- 2320 Hoogstraten - België</p>
   </footer>
   
   <script src="./js/general.js"></script>

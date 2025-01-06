@@ -21,6 +21,10 @@ footer, header, nav, section, main {
 body {
   line-height: 1;
   font-family: f.$poppins;
+  min-height: 100dvh;
+  @include flex(start, start, column);
+  background-color: c.$dark-blue;
+  background-attachment: fixed;
 }
 
 ol, ul {
@@ -49,4 +53,54 @@ input {
 
 .link {
   color: c.$link;
+}
+
+#producten, #nieuwsbrief, #informatie, #faq, #veiligheid, #contact, #route {
+  display: none;
+}
+
+#home, #producten, #nieuwsbrief, #informatie, #faq, #veiligheid, #contact, #route {
+  width: 100%;
+  padding-inline: v.$header-padding;
+  flex: 1;
+  padding-top: calc(v.$header-height + v.$header-padding / 10);
+}
+
+main {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+#fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.firework {
+  position: absolute;
+  height: 2px;
+  width: var(--length);
+  border-radius: 2px;
+  transform: rotate(var(--angle));
+  animation: explode 1s ease-out forwards;
+  box-shadow: 0 0 10px var(--color), 0 0 20px var(--color), 0 0 30px var(--color);
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) rotate(var(--angle)) scale(1);
+    opacity: 1;
+    width: var(--length);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(var(--angle)) scale(1);
+    opacity: 0;
+    width: 2px;
+  }
 }
