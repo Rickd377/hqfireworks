@@ -1,0 +1,66 @@
+header {
+  @include flex;
+  height: 100px;
+
+  nav {
+    @include flex(space-between);
+    padding-inline: v.$header-padding / 2;
+    background-color: rgba(c.$black, .85);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    margin-inline: v.$header-padding;
+    height: 75%;
+    border-radius: 99rem;
+    box-shadow: 5px 3px 10px rgba(c.$black, .2);
+    
+    * {
+      color: c.$white;
+      text-decoration: none;
+    }
+
+    .logo {
+      height: 100%;
+      li, a {
+        height: 100%;
+        @include flex;
+
+        img {
+          height: 80%;
+        }
+      }
+    }
+
+    .nav-links {
+      @include flex;
+      gap: 20px;
+      
+      a {
+        font-size: 1.1rem;
+        position: relative;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background-color: c.$white;
+          left: 50%;
+          transform: translateX(-50%);
+          top: calc(100% + 3px);
+          transition: width .3s;
+        }
+  
+        &:hover::before {
+          width: 100%;
+          transition: width .3s;
+        }
+      }
+    }
+
+    .socials {
+      @include flex;
+      gap: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+}
